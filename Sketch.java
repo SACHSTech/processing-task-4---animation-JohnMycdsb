@@ -2,52 +2,45 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 
+  double randomx = random(-width, width);
+  double randomy = random(-50, 50);
+  float var = 0;
 
-  /**
-   * state global variables
-   *  
-   * */ 
-  public float circleY = -50;
-
-	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
   public void settings() {
-	  // put your size call here
-    size(200, 200);
+    size(400, 400);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
   public void setup() {
-    background(210, 255, 173);
+    background(51, 204, 255);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
-	  
-    // clear out old frames
-    background(32);
 
-    // draw current frame based on state
-    ellipse(100, circleY, 50, 50);
-  
-    // modify state
-    circleY = circleY + 1;
-  
-    // reset state
-    if(circleY > height+50) {
-      circleY = 0;
-    }
+  background(51, 204, 255);
+
+  fill(247, 237, 40);
+  ellipse((float) ((width / 26.66) + var) , (float) ((height / 8)), (float) (width / 5.33) , (float) (height / 4.44));
+  var++;
+
+  strokeWeight(4);
+  stroke(0, 0, 0);
+  fill(117, 73, 41);
+  triangle(width / 2 , height / 4, (float) (width / 1.06), (float) (height / 1.66), width / 16, (float) (height / 1.66));
+
+  strokeWeight(3);
+  fill(222, 158, 113);
+  rect(width / 16, (float) (height / 1.66), (float) (width/1.14), (float) (height / 1.05));
+
+  strokeWeight(2);
+  fill(60, 189, 222);
+  rect((float) (width / 6.66) , (float) (height / 1.6) , (float) (width / 5.3) , (float) (height / 5.3));
+
+  strokeWeight(2);
+  fill(117, 73, 41);
+  rect((float) (width / 2.66) , (float) (height / 1.45) , width / 4, (float) (height / 1.45));
+
+  fill(102, 255, 102);
+  rect(0, (float) (height / 1.05) , width / 1, (float) (height / 1.33));
+
   }
-  
-  // define other methods down here.
-
-
 }
